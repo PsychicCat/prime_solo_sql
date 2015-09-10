@@ -23,6 +23,12 @@ JOIN employees
 ON employees.first_name = 'Michael';
 
 -- 6. What are the titles of all the books that are in stock today?
+SELECT books.title FROM books
+JOIN editions
+ON editions.book_id = books.id
+JOIN daily_inventory
+ON daily_inventory.isbn = editions.isbn
+WHERE daily_inventory.is_stocked IS true;
 
 
 -- 7. Insert one of your favorite books into the database. Hint: You’ll want to create data into at least 2 other tables to completely create this book.
