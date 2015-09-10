@@ -12,10 +12,8 @@ LEFT JOIN distinguished_authors
 ON authors.id = distinguished_authors.id
 WHERE distinguished_authors.id IS NULL;
 
-
 -- 4. How many authors are represented in our store? 
 SELECT COUNT(*) FROM authors;
-
 
 -- 5. Who are the favorite authors of the employee with the first name of Michael?
 SELECT authors_and_titles FROM favorite_authors
@@ -30,8 +28,13 @@ JOIN daily_inventory
 ON daily_inventory.isbn = editions.isbn
 WHERE daily_inventory.is_stocked IS true;
 
-
 -- 7. Insert one of your favorite books into the database. Hint: You’ll want to create data into at least 2 other tables to completely create this book.
+INSERT INTO books (id, title, author_id, subject_id)
+	VALUES (30000, 'Flow My Tears, The Policeman Said', 9999, 15)
+INSERT INTO authors (id, last_name, first_name)
+	VALUES (9999, 'Dick', 'Philip K.')
+INSERT INTO stock (isbn, cost, retail, stock)
+	VALUES ('9780575079953', 10.00, 15.00, 50);
 
 
 -- 8. What authors have books that are not in stock?
