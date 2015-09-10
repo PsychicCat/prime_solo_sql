@@ -2,12 +2,12 @@
 SELECT * FROM authors;
 
 -- 2. Which authors are also distinguished authors?
-SELECT * FROM authors 
+SELECT authors.first_name, authors.last_name FROM authors 
 JOIN distinguished_authors 
 ON authors.id = distinguished_authors.id;
 
 -- 3. Which authors are not distinguished authors?
-SELECT * FROM authors 
+SELECT authors.first_name, authors.last_name FROM authors 
 LEFT JOIN distinguished_authors 
 ON authors.id = distinguished_authors.id
 WHERE distinguished_authors.id IS NULL;
@@ -18,7 +18,9 @@ SELECT COUNT(*) FROM authors;
 
 
 -- 5. Who are the favorite authors of the employee with the first name of Michael?
-
+SELECT authors_and_titles FROM favorite_authors
+JOIN employees
+ON employees.first_name = 'Michael';
 
 -- 6. What are the titles of all the books that are in stock today?
 
