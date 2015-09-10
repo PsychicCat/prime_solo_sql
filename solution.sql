@@ -13,7 +13,8 @@ ON authors.id = distinguished_authors.id
 WHERE distinguished_authors.id IS NULL;
 
 
--- 4. How many authors are represented in our store?
+-- 4. How many authors are represented in our store? 
+SELECT COUNT(*) FROM authors;
 
 
 -- 5. Who are the favorite authors of the employee with the first name of Michael?
