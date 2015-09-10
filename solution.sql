@@ -42,3 +42,9 @@ WHERE daily_inventory.is_stocked IS false;
 
 
 -- 9. What is the title of the book that has the most stock?
+
+SELECT books.title FROM books
+JOIN editions ON editions.book_id = books.id
+JOIN stock ON stock.isbn = editions.isbn
+ORDER BY stock.stock DESC 
+LIMIT 1;
