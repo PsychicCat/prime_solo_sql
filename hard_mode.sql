@@ -52,5 +52,18 @@ CREATE TABLE order_items (
 	ProductID int,
 	Quantity int,
 	FOREIGN KEY (OrderID) REFERENCES orders(OrderID),
-	FOREIGN KEY (ProductID) REFERENCES products(ProductID),
+	FOREIGN KEY (ProductID) REFERENCES products(ProductID)
 );
+
+INSERT INTO order_items (OrderID, ProductID, Quantity)
+	VALUES
+		(1, 5, 1),
+		(2, 3, 5),
+		(3, 3, 5),
+		(4, 4, 2),
+		(5, 1, 2),
+		(6, 1, 3),
+		(7, 2, 1),
+		(8, 3, 20),
+		(9, 4, 1),
+		(10, 1, 10);
